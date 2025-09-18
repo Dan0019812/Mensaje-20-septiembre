@@ -30,43 +30,47 @@
                 radial-gradient(circle at 90% 80%, rgba(240,248,255,0.6), transparent 15%);
     z-index:0;
   }
-  /* left pizza stylized */
+  /* left pizza stylized - more centered and prominent */
   .pizza-canvas{
     position:absolute;
-    left:4%;
-    top:10%;
-    width:360px;height:360px;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
-    border-radius:16px;
+    left:50%;
+    top:15%;
+    width:400px;height:400px;
+    filter: drop-shadow(0 12px 30px rgba(0,0,0,0.3));
+    border-radius:20px;
     overflow:hidden;
-    transform: rotate(-6deg);
-    opacity:0.9;
+    transform: translateX(-50%) rotate(-8deg);
+    opacity:0.95;
+    z-index:1;
+    border: 3px solid rgba(255, 255, 255, 0.6);
   }
-  /* right illustration */
+  /* right illustration - adjusted position */
   .couple-img{
     position:absolute;
-    right:6%;
-    top:8%;
-    width:420px;height:420px;
+    right:8%;
+    top:12%;
+    width:380px;height:380px;
     border-radius:16px;
     overflow:hidden;
-    transform: rotate(4deg);
-    opacity:0.95;
+    transform: rotate(6deg);
+    opacity:0.85;
     box-shadow:0 12px 30px rgba(0,0,0,0.15);
+    z-index:1;
   }
-  /* soft frame */
+  /* soft frame - adjusted to work with centered image */
   .frame{
     position:relative;
     z-index:2;
     width:100%;
     max-width:960px;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.75);
     border-radius:18px;
     padding:36px;
+    margin-top:200px;
     box-sizing:border-box;
     text-align:center;
-    backdrop-filter: blur(6px) saturate(120%);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    backdrop-filter: blur(8px) saturate(130%);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
   }
   h1{
     font-family: 'Dancing Script', cursive;
@@ -160,9 +164,15 @@
   
   /* responsive */
   @media (max-width:900px){
-    .pizza-canvas{width:220px;height:220px;left:-10%;top:8%;transform:rotate(-10deg);opacity:0.85;}
-    .couple-img{width:260px;height:260px;right:-6%;top:6%;transform:rotate(8deg);opacity:0.9;}
-    .frame{padding:22px;}
+    .pizza-canvas{
+      width:280px;height:280px;
+      left:50%;
+      top:8%;
+      transform: translateX(-50%) rotate(-12deg);
+      opacity:0.9;
+    }
+    .couple-img{width:220px;height:220px;right:-8%;top:6%;transform:rotate(12deg);opacity:0.8;}
+    .frame{padding:22px;margin-top:150px;}
     h1{font-size:34px;}
     .para{font-size:18px;}
     .controls{flex-direction:column;gap:8px;}
